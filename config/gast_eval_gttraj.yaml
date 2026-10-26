@@ -1,0 +1,6 @@
+_base_: /data3/shenzhen/World_Projects/GAST/config/gast_nuscenes.yaml
+model_params:
+  use_gt: True
+infer_params:
+  model_path: "/data3/shenzhen/World_Projects/GAST/weights/gast_gtocc_gttraj.pth"
+  save_dir: "/data3/shenzhen/World_Projects/GAST/experiments/eval_gttraj/"

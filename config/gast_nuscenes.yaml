@@ -7,12 +7,12 @@ common_params:
 
 
 save_params:
-  save_path: "/mnt/home/chensitao/code/GAST/experiments/Occ3D_nuScenes/"
+  save_path: "/data3/shenzhen/World_Projects/GAST/experiments/Occ3D_nuScenes/"
   save_file: 
-    - "/mnt/home/chensitao/code/GAST/config/gast_nuscenes.yaml"
-    - "/mnt/home/chensitao/code/GAST/dataloader/dataset_nus_occ3d.py"
-    - "/mnt/home/chensitao/code/GAST/models/*.py"
-    - "/mnt/home/chensitao/code/GAST/tasks/occ3d_nuscenes/*.py"
+    - "/data3/shenzhen/World_Projects/GAST/config/gast_nuscenes.yaml"
+    - "/data3/shenzhen/World_Projects/GAST/dataloader/dataset_nus_occ3d.py"
+    - "/data3/shenzhen/World_Projects/GAST/models/*.py"
+    - "/data3/shenzhen/World_Projects/GAST/tasks/occ3d_nuscenes/*.py"
 
 
 model_params:
@@ -57,8 +57,8 @@ model_params:
 
 dataset_params:
   dataset_name: "nuScenes_Occ3D"
-  label_path: "/mnt/dataset/Occ3D_nuScenes/trainval/"
-  anno_path: "/mnt/dataset/Occ3D_nuScenes/trainval/annotations.json"
+  label_path: "/scratch/shenzhen/Datasets/Occ3D_nuscenes/"
+  anno_path: "/scratch/shenzhen/Datasets/Occ3D_nuscenes/annotations.json"
   grid_shape: [200, 200, 16]
   return_len: 10
   start_frame: 0
@@ -69,12 +69,12 @@ dataset_params:
               4275424, 51393615, 61411620, 227783782, 252350317, 1892500630 ]
 
   train_data_loader:
-    pkl_file: "/mnt/home/chensitao/code/GAST/infos/world-nuscenes_infos_train.pkl"
+    pkl_file: "/scratch/shenzhen/Datasets/infos/world-nuscenes_infos_train.pkl"
     batch_size: 1
     num_workers: 8   
     
   val_data_loader:
-    pkl_file: "/mnt/home/chensitao/code/GAST/infos/world-nuscenes_infos_val.pkl"
+    pkl_file: "/scratch/shenzhen/Datasets/infos/world-nuscenes_infos_val.pkl"
     batch_size: 1
     num_workers: 8
 

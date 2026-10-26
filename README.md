@@ -11,8 +11,10 @@ conda activate occ
 2. Install the following dependencies
 ```setup
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
-pip install torch-scatter -f https://data.pyg.org/whl/torch-1.12.0+cu116.html
-pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu116/torch1.12.1/index.html
+# pip install torch-scatter -f https://data.pyg.org/whl/torch-1.12.0+cu116.html
+pip install torch-scatter==2.1.0 -f https://data.pyg.org/whl/torch-1.12.1+cu116.html --only-binary=:all:
+# pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu116/torch1.12.1/index.html
+pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu116/torch1.12.0/index.html
 pip install spconv-cu116 tensorboard numba einops pyquaternion nuscenes-devkit
 ```
 

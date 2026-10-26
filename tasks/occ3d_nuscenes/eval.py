@@ -33,6 +33,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--config_path", type=str, help="path to config file")
 args = parser.parse_args()
 config = yaml.safe_load(open(args.config_path, 'r'))
+if '_base_' in config:  # inherit from base yaml, override with the keys given here
+    def merge(b, o):
+        for k, v in o.items():
+            b[k] = merge(b.get(k, {}), v) if isinstance(v, dict) else v
+        return b
+    base = yaml.safe_load(open(config.pop('_base_'), 'r'))
+    config = merge(base, config)
 save_dir = os.path.join(config['infer_params']['save_dir'], "Evaluation")
 os.makedirs(save_dir, exist_ok=True)
 
